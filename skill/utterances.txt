@@ -1,0 +1,8 @@
+DeviceIntent use {Device}
+DeviceIntent use {Device} remote
+DeviceIntent use the {Device}
+DeviceIntent use the {Device} remote
+DeviceIntent switch to {Device}
+DeviceIntent switch to {Device} remote
+DeviceIntent switch to the {Device}
+DeviceIntent switch to the {Device} remote
