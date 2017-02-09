@@ -1,0 +1,11 @@
+{
+  "name": "alexa-remote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pkg:lambda": "zip -r -X lambda.zip lambda/index.js lambda/node_modules"
+  },
+  "author": "dayne kilheffer",
+  "license": "ISC"
+}
