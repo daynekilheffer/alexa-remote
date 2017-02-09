@@ -1,0 +1,11 @@
+{
+  "name": "alexa-remote-lambda",
+  "version": "1.0.0",
+  "description": "the lambda function used to communicate between alexa and the pi",
+  "main": "index.js",
+  "author": "dayne kilheffer",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-sdk": "1.0.6"
+  }
+}
