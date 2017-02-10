@@ -2,18 +2,31 @@ const Alexa = require('alexa-sdk');
 
 const handlers = {
     NewSession: function () {
-        this.emit(':tell', 'Universal remote activated')
+        if (this.event.request.type === 'IntentRequest') {
+            this.emitWithState(this.event.request.intent.name);
+        }
     },
     PowerIntent: function () {
-        console.log(this.event.request.intent);
-        this.emit(':tell', 'power button pressed')
+        var device = this.event.request.intent.slots.Device.value || this.attributes.device;
+        if (device) {
+            var msg = `power button pressed for ${device}`;
+            this.emit(':ask', msg, msg)
+        } else {
+            var msg = 'I do not know which device to interact with.';
+            this.emit(':ask', msg, msg)
+        }
     },
-    SourceIntent: function () {
-        const device = this.event.request.intent.slots.Device;
+    DeviceIntent: function () {
+        const device = this.event.request.intent.slots.Device.value;
+        const msg = `${device} is active`;
         Object.assign(this.attributes, {
             device: device,
         });
-        this.emit(':tell', `activated ${device}`)
+
+        this.emit(':ask', msg, msg)
+    },
+    'AMAZON.StopIntent': function () {
+        this.emit(':tell', 'OK, see ya!');
     }
 };
 

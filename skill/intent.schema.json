@@ -10,7 +10,13 @@
       ]
     },
     {
-      "intent": "PowerIntent"
+      "intent": "PowerIntent",
+      "slots": [
+          {
+              "name": "Device",
+              "type": "DEVICE"
+          }
+      ]
     },
     {
       "intent": "SourceIntent"

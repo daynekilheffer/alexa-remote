@@ -6,3 +6,7 @@ DeviceIntent switch to {Device}
 DeviceIntent switch to {Device} remote
 DeviceIntent switch to the {Device}
 DeviceIntent switch to the {Device} remote
+PowerIntent turn on {Device}
+PowerIntent turn on {Device}
+PowerIntent turn off {Device}
+PowerIntent turn off
