@@ -3,8 +3,8 @@ const http = require('http');
 const post = (target, data, cb) => {
     http.request(
         {
-            hostname: 'alexa-remote.webhop.me',
-            port: 3000,
+            hostname: process.env.PI_API_DOMAIN,
+            port: process.env.PI_API_PORT || 3000,
             path: target,
             method: 'POST'
         },
