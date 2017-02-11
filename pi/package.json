@@ -1,0 +1,17 @@
+{
+  "name": "alexa-remote-pi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "dayne kilheffer",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "1.2.4",
+    "koa-bodyparser": "2.3.0",
+    "koa-route": "2.4.2",
+    "lirc_node": "0.0.4"
+  }
+}

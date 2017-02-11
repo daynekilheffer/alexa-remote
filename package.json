@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pkg:lambda": "cd lambda && zip -r -X ../lambda.zip index.js node_modules && cd .."
+    "pkg:lambda": "cd lambda && zip -r -X ../lambda.zip *.js node_modules && cd .."
   },
   "author": "dayne kilheffer",
   "license": "ISC"
