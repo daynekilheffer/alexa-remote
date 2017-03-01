@@ -9,7 +9,11 @@ const post = (target, data, cb) => {
             method: 'POST'
         },
         (res) => {
-            cb();
+            if (res.statusCode >= 200 && res.statusCode < 400) {
+                cb();
+            } else {
+                cb(res.statusMessage);
+            }
         }
     )
     .on('error', (err) => {
