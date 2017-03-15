@@ -18,7 +18,9 @@ const doubleSends = {
 const send = (remoteName, keyCode, iterations = 1) => {
     if (lirc.remotes[remoteName]) {
         for (let i = 0; i < iterations; i++) {
-            lirc.irsend.send_once(remoteName, keyCode);
+            setTimeout(() => {
+                lirc.irsend.send_once(remoteName, keyCode);
+            }, i * 1000);
         }
         return true;
     }

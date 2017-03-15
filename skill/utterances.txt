@@ -10,3 +10,7 @@ PowerIntent turn on {Device}
 PowerIntent turn on
 PowerIntent turn off {Device}
 PowerIntent turn off
+VolumeUpIntent turn it up
+VolumeUpIntent volume up
+VolumeDownIntent turn it down
+VolumeDownIntent volume down

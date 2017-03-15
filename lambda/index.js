@@ -1,5 +1,6 @@
 const Alexa = require('alexa-sdk');
 const piApi = require('./pi-api');
+const generateVolumeIntent = require('./volume-intent-generator');
 
 const handlers = {
     NewSession: function () {
@@ -37,6 +38,8 @@ const handlers = {
 
         this.emit(':ask', msg, '')
     },
+    VolumeUpIntent: generateVolumeIntent('up'),
+    VolumeDownIntent: generateVolumeIntent('down'),
     'AMAZON.StopIntent': function () {
         this.emit(':tell', 'OK, Goodbye!');
     }

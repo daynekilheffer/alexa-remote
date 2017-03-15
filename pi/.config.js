@@ -2,12 +2,12 @@ module.exports = {
     volume: {
         up: {
             remote: 'soundbar',
-            keyCode: 'KEY_VOLUMEUP',
+            keyCode: ['KEY_VOLUMEUP', 'KEY_VOLUMEUP'],
             iterations: 2,
         },
         down: {
             remote: 'soundbar',
-            keyCode: 'KEY_VOLUMEDOWN',
+            keyCode: ['KEY_VOLUMEDOWN', 'KEY_VOLUMEDOWN'],
             iterations: 2,
         }
     },

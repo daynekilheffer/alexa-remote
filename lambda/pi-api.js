@@ -31,5 +31,8 @@ module.exports = {
     power: (device, cb) => {
         var deviceCodename = deviceMappings[device] || device;
         post(`/remotes/${deviceCodename}/power`, null, cb);
+    },
+    volume: (direction, cb) => {
+        post(`/remotes/volume/${direction}`, null, cb);
     }
 }

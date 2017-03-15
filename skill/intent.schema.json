@@ -22,7 +22,10 @@
       "intent": "SourceIntent"
     },
     {
-      "intent": "DirectionIntent"
+      "intent": "VolumeUpIntent"
+    },
+    {
+      "intent": "VolumeDownIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
