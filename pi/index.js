@@ -2,6 +2,8 @@ const koa = require('koa');
 const router = require('koa-route');
 const bodyParser = require('koa-bodyparser');
 
+const config = require('./.config');
+
 const app = koa();
 app.use(bodyParser());
 
@@ -13,8 +15,35 @@ const doubleSends = {
     soundbar: true,
 };
 
+const send = (remoteName, keyCode, iterations = 1) => {
+    if (lirc.remotes[remoteName]) {
+        for (let i = 0; i < iterations; i++) {
+            lirc.irsend.send_once(remoteName, keyCode);
+        }
+        return true;
+    }
+    return false;
+}
+
 app.use(router.get('/remotes', function *(){
     this.body = lirc.remotes;
+}));
+app.use(router.post('/remotes/volume/:direction', function *(direction) {
+    const { remote, keyCode, iterations = 1 } = config.volume[direction];
+    const result = send(remote, keyCode, iterations);
+    this.status = 204;
+    if (!result) {
+        this.status = 500;
+    }
+}));
+app.use(router.post('/remotes/:name/source', function *(name) {
+    const { remote = name, keyCode, iterations = 1 } = config.source[name];
+    console.log(remote, keyCode, iterations)
+    const result = send(remote, keyCode, iterations);
+    this.status = 204;
+    if (!result) {
+        this.status = 500;
+    }
 }));
 app.use(router.post('/remotes/:name/power', function *(name){
     console.log(this.request.path);
