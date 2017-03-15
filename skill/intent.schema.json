@@ -19,7 +19,13 @@
       ]
     },
     {
-      "intent": "SourceIntent"
+      "intent": "SourceIntent",
+      "slots": [
+          {
+              "name": "Device",
+              "type": "DEVICE"
+          }
+      ]
     },
     {
       "intent": "VolumeUpIntent"

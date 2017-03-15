@@ -14,3 +14,6 @@ VolumeUpIntent turn it up
 VolumeUpIntent volume up
 VolumeDownIntent turn it down
 VolumeDownIntent volume down
+SourceIntent change source
+SourceIntent change {Device} source
+SourceIntent change source on {Device}

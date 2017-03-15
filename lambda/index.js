@@ -29,6 +29,21 @@ const handlers = {
             this.emit(':ask', msg, '')
         }
     },
+    SourceIntent: function () {
+        var device = this.event.request.intent.slots.Device.value || this.attributes.device;
+        if (device) {
+            piApi.source(device, (err, result) => {
+                if (err) {
+                    console.log(err, result);
+                    this.emit(':ask', `I had trouble changing the source on the ${device}`, '');
+                }
+                this.emit(':ask', `source button pressed for ${device}`, '')
+            })
+        } else {
+            var msg = 'I do not know which device to interact with.';
+            this.emit(':ask', msg, '')
+        }
+    },
     DeviceIntent: function () {
         const device = this.event.request.intent.slots.Device.value;
         const msg = `${device} is not active.`;

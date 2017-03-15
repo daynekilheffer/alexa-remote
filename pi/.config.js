@@ -12,7 +12,7 @@ module.exports = {
         }
     },
     source: {
-        tv: {
+        fios: {
             remote: 'fios',
             keyCode: 'KEY_FN',
         },
